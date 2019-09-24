@@ -1,26 +1,4 @@
 <resources>
-    <string name="app_name">Submisi</string>
-    <string name="menu1">Film</string>
-    <string name="menu2">Acara TV</string>
-    <string-array name="movie_title">
-        <item>A Star Is Born</item>
-        <item>Alita: Battle Angel</item>
-        <item>Aquaman</item>
-        <item>Bohemian Rhapsody</item>
-        <item>Cold Pursuit</item>
-        <item>Creed II</item>
-        <item>Fantastic Beasts: The Crimes of Grindelwald</item>
-        <item>Glass</item>
-        <item>How to Train Your Dragon: The Hidden World</item>
-        <item>Avengers: Infinity War</item>
-        <item>Mary Queen of Scots</item>
-        <item>Master Z: Ip Man Legacy</item>
-        <item>Mortal Engines</item>
-        <item>Overlord</item>
-    </string-array>
-
-    <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
-
     <array name="movie_photo">
         <item>@drawable/poster_a_start_is_born</item>
         <item>@drawable/poster_alita</item>
@@ -37,6 +15,49 @@
         <item>@drawable/poster_mortal_engines</item>
         <item>@drawable/poster_overlord</item>
     </array>
+    <array name="show_photo">
+        <item>@drawable/poster_arrow</item>
+        <item>@drawable/poster_doom_patrol</item>
+        <item>@drawable/poster_dragon_ball</item>
+        <item>@drawable/poster_fairytail</item>
+        <item>@drawable/poster_family_guy</item>
+        <item>@drawable/poster_flash</item>
+        <item>@drawable/poster_god</item>
+        <item>@drawable/poster_gotham</item>
+        <item>@drawable/poster_grey_anatomy</item>
+        <item>@drawable/poster_hanna</item>
+        <item>@drawable/poster_iron_fist</item>
+        <item>@drawable/poster_naruto_shipudden</item>
+        <item>@drawable/poster_ncis</item>
+        <item>@drawable/poster_riverdale</item>
+        <item>@drawable/poster_shameless</item>
+    </array>
+    <string name="app_name">Submisi</string>
+    <string name="menu1">Film</string>
+    <string name="page1">Film Favorit</string>
+    <string name="page2">TV Favorit</string>
+    <string name="menu2">Acara TV</string>
+    <string name="menu3">Favorit</string>
+    <string name="change_language_settings">Ubah Pengaturan Bahasa</string>
+    <string name="change_notification">Ubah Pengaturan Notifikasi</string>
+    <string name="notif_1">Reminder Setiap Hari</string>
+    <string name="notif_2">Reminder rilis baru</string>
+    <string-array name="movie_title">
+        <item>A Star Is Born</item>
+        <item>Alita: Battle Angel</item>
+        <item>Aquaman</item>
+        <item>Bohemian Rhapsody</item>
+        <item>Cold Pursuit</item>
+        <item>Creed II</item>
+        <item>Fantastic Beasts: The Crimes of Grindelwald</item>
+        <item>Glass</item>
+        <item>How to Train Your Dragon: The Hidden World</item>
+        <item>Avengers: Infinity War</item>
+        <item>Mary Queen of Scots</item>
+        <item>Master Z: Ip Man Legacy</item>
+        <item>Mortal Engines</item>
+        <item>Overlord</item>
+    </string-array>
 
     <string-array name="movie_description">
         <item>Musisi kawakan Jackson Maine menemukan - dan jatuh cinta dengan - artis yang sedang berjuang Ally. Dia baru saja menyerah pada mimpinya untuk menjadi besar sebagai penyanyi - sampai Jack membujuknya menjadi sorotan. Tetapi bahkan ketika karir Ally lepas landas, sisi pribadi dari hubungan mereka hancur, seperti Jack berjuang pertempuran yang sedang berlangsung dengan setan internalnya sendiri.</item>
@@ -89,24 +110,6 @@
         <item>Riverdale</item>
         <item>Shameless</item>
     </string-array>
-
-    <array name="show_photo">
-        <item>@drawable/poster_arrow</item>
-        <item>@drawable/poster_doom_patrol</item>
-        <item>@drawable/poster_dragon_ball</item>
-        <item>@drawable/poster_fairytail</item>
-        <item>@drawable/poster_family_guy</item>
-        <item>@drawable/poster_flash</item>
-        <item>@drawable/poster_god</item>
-        <item>@drawable/poster_gotham</item>
-        <item>@drawable/poster_grey_anatomy</item>
-        <item>@drawable/poster_hanna</item>
-        <item>@drawable/poster_iron_fist</item>
-        <item>@drawable/poster_naruto_shipudden</item>
-        <item>@drawable/poster_ncis</item>
-        <item>@drawable/poster_riverdale</item>
-        <item>@drawable/poster_shameless</item>
-    </array>
 
     <string-array name="show_description">
         <item>Playboy miliarder manja, Oliver Queen, hilang dan diduga tewas ketika kapal pesiarnya hilang di laut. Dia kembali lima tahun kemudian seorang pria yang berubah, bertekad untuk membersihkan kota sebagai main hakim sendiri bersenjatakan busur.</item>

@@ -1,26 +1,4 @@
 <resources>
-    <string name="app_name">Submission</string>
-    <string name="menu1">Movie</string>
-    <string name="menu2">Tv Show</string>
-    <string-array name="movie_title">
-        <item>A Star Is Born</item>
-        <item>Alita: Battle Angel</item>
-        <item>Aquaman</item>
-        <item>Bohemian Rhapsody</item>
-        <item>Cold Pursuit</item>
-        <item>Creed II</item>
-        <item>Fantastic Beasts: The Crimes of Grindelwald</item>
-        <item>Glass</item>
-        <item>How to Train Your Dragon: The Hidden World</item>
-        <item>Avengers: Infinity War</item>
-        <item>Mary Queen of Scots</item>
-        <item>Master Z: Ip Man Legacy</item>
-        <item>Mortal Engines</item>
-        <item>Overlord</item>
-    </string-array>
-
-    <string name="change_language_settings">Change Language Settings</string>
-
     <array name="movie_photo">
         <item>@drawable/poster_a_start_is_born</item>
         <item>@drawable/poster_alita</item>
@@ -37,6 +15,49 @@
         <item>@drawable/poster_mortal_engines</item>
         <item>@drawable/poster_overlord</item>
     </array>
+    <array name="show_photo">
+        <item>@drawable/poster_arrow</item>
+        <item>@drawable/poster_doom_patrol</item>
+        <item>@drawable/poster_dragon_ball</item>
+        <item>@drawable/poster_fairytail</item>
+        <item>@drawable/poster_family_guy</item>
+        <item>@drawable/poster_flash</item>
+        <item>@drawable/poster_god</item>
+        <item>@drawable/poster_gotham</item>
+        <item>@drawable/poster_grey_anatomy</item>
+        <item>@drawable/poster_hanna</item>
+        <item>@drawable/poster_iron_fist</item>
+        <item>@drawable/poster_naruto_shipudden</item>
+        <item>@drawable/poster_ncis</item>
+        <item>@drawable/poster_riverdale</item>
+        <item>@drawable/poster_shameless</item>
+    </array>
+    <string name="app_name">Submission</string>
+    <string name="menu1">Movie</string>
+    <string name="page1">Favorite Movie</string>
+    <string name="page2">Favorite TV</string>
+    <string name="menu2">Tv Show</string>
+    <string name="menu3">Favorite</string>
+    <string name="change_language_settings">Change Language Settings</string>
+    <string name="change_notification">Change Notification Settings</string>
+    <string name="notif_1">Daily Reminder</string>
+    <string name="notif_2">Release Reminder</string>
+    <string-array name="movie_title">
+        <item>A Star Is Born</item>
+        <item>Alita: Battle Angel</item>
+        <item>Aquaman</item>
+        <item>Bohemian Rhapsody</item>
+        <item>Cold Pursuit</item>
+        <item>Creed II</item>
+        <item>Fantastic Beasts: The Crimes of Grindelwald</item>
+        <item>Glass</item>
+        <item>How to Train Your Dragon: The Hidden World</item>
+        <item>Avengers: Infinity War</item>
+        <item>Mary Queen of Scots</item>
+        <item>Master Z: Ip Man Legacy</item>
+        <item>Mortal Engines</item>
+        <item>Overlord</item>
+    </string-array>
 
     <string-array name="movie_description">
         <item>Seasoned musician Jackson Maine discovers - and falls in love with - struggling artist Ally. She has just about given up on her dream to make it big as a singer - until Jack coaxes her into the spotlight. But even as Ally\'s career takes off, the personal side of their relationship is breaking down, as Jack fights an ongoing battle with his own internal demons.</item>
@@ -89,24 +110,6 @@
         <item>Riverdale</item>
         <item>Shameless</item>
     </string-array>
-
-    <array name="show_photo">
-        <item>@drawable/poster_arrow</item>
-        <item>@drawable/poster_doom_patrol</item>
-        <item>@drawable/poster_dragon_ball</item>
-        <item>@drawable/poster_fairytail</item>
-        <item>@drawable/poster_family_guy</item>
-        <item>@drawable/poster_flash</item>
-        <item>@drawable/poster_god</item>
-        <item>@drawable/poster_gotham</item>
-        <item>@drawable/poster_grey_anatomy</item>
-        <item>@drawable/poster_hanna</item>
-        <item>@drawable/poster_iron_fist</item>
-        <item>@drawable/poster_naruto_shipudden</item>
-        <item>@drawable/poster_ncis</item>
-        <item>@drawable/poster_riverdale</item>
-        <item>@drawable/poster_shameless</item>
-    </array>
 
     <string-array name="show_description">
         <item>Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.</item>

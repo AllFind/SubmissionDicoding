@@ -3,6 +3,8 @@ package com.example.submission.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.text.SimpleDateFormat;
+
 public class Show implements Parcelable {
     public static final Creator<Show> CREATOR = new Creator<Show>() {
         @Override
@@ -15,15 +17,24 @@ public class Show implements Parcelable {
             return new Show[size];
         }
     };
-    private String Title, Description;
+    private String Title, Description, Photo, Date;
     private double Rating;
-    private String Photo;
+    private int ID;
+    private boolean Favorite;
 
-    public Show(String title, String description, double rating, String photo) {
+    public Show(String title, String description, double rating, String photo, int id, String date) {
         Title = title;
         Description = description;
         Rating = rating;
         Photo = photo;
+        ID = id;
+        SimpleDateFormat input = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            java.util.Date newDate = input.parse(date);
+            input = new SimpleDateFormat("dd MMM yyyy");
+            Date = input.format(newDate);
+        } catch (Exception e) {
+        }
     }
 
     protected Show(Parcel in) {
@@ -31,6 +42,16 @@ public class Show implements Parcelable {
         this.Description = in.readString();
         this.Rating = in.readDouble();
         this.Photo = in.readString();
+        this.ID = in.readInt();
+        this.Date = in.readString();
+    }
+
+    public boolean isFavorite() {
+        return Favorite;
+    }
+
+    public void setFavorite(boolean favorite) {
+        Favorite = favorite;
     }
 
     public String getPhoto() {
@@ -65,6 +86,22 @@ public class Show implements Parcelable {
         Rating = rating;
     }
 
+    public String getDate() {
+        return Date;
+    }
+
+    public void setDate(String date) {
+        Date = date;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -76,5 +113,7 @@ public class Show implements Parcelable {
         dest.writeString(this.Description);
         dest.writeDouble(this.Rating);
         dest.writeString(this.Photo);
+        dest.writeString(this.Date);
+        dest.writeInt(this.ID);
     }
 }

@@ -2,9 +2,13 @@ package com.example.submission.fragment;
 
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
@@ -29,7 +33,8 @@ public class MovieFragment extends Fragment {
 
     private CardMovieAdapter adapter;
     private MovieViewModel movieViewModel;
-
+    private Button btnSearch;
+    private EditText txtSearch;
     private RecyclerView recyclerView;
     private ProgressBar progressBar;
     private Observer<ArrayList<Movie>> getMovie = new Observer<ArrayList<Movie>>() {
@@ -59,6 +64,8 @@ public class MovieFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
+        btnSearch = view.findViewById(R.id.searchBtn);
+        txtSearch = view.findViewById(R.id.searchBar);
         recyclerView = view.findViewById(R.id.rv_movie);
         progressBar = view.findViewById(R.id.progress_bar);
         recyclerView.setVisibility(View.INVISIBLE);
@@ -73,8 +80,21 @@ public class MovieFragment extends Fragment {
         LinearLayoutManager llm = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(llm);
         recyclerView.setAdapter(adapter);
-
-
+        adapter.notifyDataSetChanged();
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String search = txtSearch.getText().toString();
+                if(search.equals("")){
+                    movieViewModel.setMovies();
+                    adapter.notifyDataSetChanged();
+                }
+                else{
+                    movieViewModel.searchMovie(search);
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        });
     }
 
 }

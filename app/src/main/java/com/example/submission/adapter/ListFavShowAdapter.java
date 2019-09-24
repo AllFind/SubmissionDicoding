@@ -20,59 +20,39 @@ import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class CardShowAdapter extends RecyclerView.Adapter<CardShowAdapter.CardViewViewHolder> {
-
+public class ListFavShowAdapter extends RecyclerView.Adapter<ListFavShowAdapter.ListViewHolder> {
+    private ArrayList<Show> listShow;
     private Context context;
-    private ArrayList<Show> listShow = new ArrayList<>();
     private ShowHelper showHelper;
 
-    public CardShowAdapter(Context context) {
+    public ListFavShowAdapter(ArrayList<Show> list, Context context) {
+        listShow = list;
         this.context = context;
-    }
-
-    public ArrayList<Show> getListShow() {
-        return listShow;
-    }
-
-    public void setListShow(ArrayList<Show> listShow) {
-        this.listShow.clear();
-        this.listShow = listShow;
-        notifyDataSetChanged();
     }
 
     @NonNull
     @Override
-    public CardViewViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ListViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie, parent, false);
-        return new CardViewViewHolder(view);
+        return new ListViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CardViewViewHolder holder, int position) {
-        final Show show = getListShow().get(position);
-        showHelper = ShowHelper.getInstance(context);
-        showHelper.open();
-        Show favShow = showHelper.getShow(show.getID());
+    public void onBindViewHolder(@NonNull final ListViewHolder holder, final int position) {
+        final Show show = listShow.get(position);
 
-        if (favShow == null) {
-            holder.favBtn.setImageResource(R.drawable.favorite_black);
-            show.setFavorite(false);
-        } else {
-            holder.favBtn.setImageResource(R.drawable.favorite_red);
-            show.setFavorite(true);
-        }
+        showHelper = ShowHelper.getInstance(context);
+
+        holder.favBtn.setImageResource(R.drawable.favorite_red);
+
         holder.favBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (show.isFavorite()) {
-                    show.setFavorite(false);
-                    holder.favBtn.setImageResource(R.drawable.favorite_black);
-                    showHelper.deleteFavShow(show.getID());
-                } else {
-                    show.setFavorite(true);
-                    holder.favBtn.setImageResource(R.drawable.favorite_red);
-                    showHelper.insertFavShow(show);
-                }
+                holder.favBtn.setImageResource(R.drawable.favorite_black);
+                showHelper.deleteFavShow(show.getID());
+                listShow.remove(position);
+                notifyItemRemoved(position);
+                notifyItemChanged(position, listShow.size());
             }
         });
 
@@ -84,25 +64,27 @@ public class CardShowAdapter extends RecyclerView.Adapter<CardShowAdapter.CardVi
             public void onClick(View view) {
                 Intent i = new Intent(view.getContext(), DetailActivity.class);
                 i.putExtra("OBJECT", show);
-                context.startActivity(i);
+                view.getContext().startActivity(i);
             }
         });
         holder.ratingBar.setRating(((float) show.getRating() / 2));
         holder.txtRating.setText(Double.toString(show.getRating()));
         holder.txtDate.setText(show.getDate());
+
     }
 
     @Override
     public int getItemCount() {
-        return getListShow().size();
+        return listShow.size();
     }
 
-    public class CardViewViewHolder extends RecyclerView.ViewHolder {
+    public class ListViewHolder extends RecyclerView.ViewHolder {
         ImageView imgPhoto, favBtn;
-        TextView txtTitle, txtDesc, txtRating, txtDate;
+        TextView txtTitle, txtDesc, txtDate, txtRating;
         RatingBar ratingBar;
 
-        public CardViewViewHolder(@NonNull View itemView) {
+
+        public ListViewHolder(@NonNull View itemView) {
             super(itemView);
             imgPhoto = itemView.findViewById(R.id.poster);
             txtTitle = itemView.findViewById(R.id.title);

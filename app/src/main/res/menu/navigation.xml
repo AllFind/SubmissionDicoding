@@ -14,4 +14,9 @@
 
     </item>
 
+    <item
+        android:id="@+id/navigation_fav"
+        android:icon="@drawable/favorite_black"
+        android:title="@string/menu3"></item>
+
 </menu>
